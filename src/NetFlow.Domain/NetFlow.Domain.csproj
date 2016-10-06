@@ -40,20 +40,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extensions\AggregateExtension.cs" />
-    <Compile Include="Models\Aggregate.cs" />
-    <Compile Include="Models\AggregateFactory.cs" />
-    <Compile Include="Models\IAggregate.cs" />
-    <Compile Include="Models\IAggregateFactory.cs" />
-    <Compile Include="Persistence\IEventStore.cs" />
-    <Compile Include="Persistence\IRepository.cs" />
-    <Compile Include="Persistence\Repository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\Account.cs" />
+    <Compile Include="Security\Commands\RegisterAccount.cs" />
+    <Compile Include="Security\Events\AccountRegistered.cs" />
+    <Compile Include="Security\Handlers\AccountRegistration.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\NetFlow.CrossCutting\NetFlow.CrossCutting.csproj">
-      <Project>{e7af289f-cc8c-4fb9-a056-a4cc684ef5ce}</Project>
-      <Name>NetFlow.CrossCutting</Name>
+    <Folder Include="Security\Processes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NetFlow.Infrastructure\NetFlow.Infrastructure.csproj">
+      <Project>{cd6ae308-af8e-4c5b-bcda-4ba4c16a4760}</Project>
+      <Name>NetFlow.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

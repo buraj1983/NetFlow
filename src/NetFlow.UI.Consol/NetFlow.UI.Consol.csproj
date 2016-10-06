@@ -9,9 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>NetFlow.UI.Consol</RootNamespace>
     <AssemblyName>NetFlow.UI.Consol</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.1.1.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.1.1\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -47,12 +52,31 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NetFlow.Api\NetFlow.Api.csproj">
-      <Project>{bc3a1463-d993-475b-ae7a-d2e740402771}</Project>
+      <Project>{BC3A1463-D993-475B-AE7A-D2E740402771}</Project>
       <Name>NetFlow.Api</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Domain\NetFlow.Domain.csproj">
+      <Project>{5795e132-4b0c-4ba9-adfb-32163dd99817}</Project>
+      <Name>NetFlow.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Infrastructure.EventSourcing.NEventStore\NetFlow.Infrastructure.EventSourcing.NEventStore.csproj">
+      <Project>{2d57069d-3e3e-4d32-ac4c-9e30d22c1e16}</Project>
+      <Name>NetFlow.Infrastructure.EventSourcing.NEventStore</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Infrastructure.Messaging.InMemory\NetFlow.Infrastructure.Messaging.InMemory.csproj">
+      <Project>{e34473cb-57e4-42ef-b61c-70fa82571f87}</Project>
+      <Name>NetFlow.Infrastructure.Messaging.InMemory</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Infrastructure\NetFlow.Infrastructure.csproj">
+      <Project>{cd6ae308-af8e-4c5b-bcda-4ba4c16a4760}</Project>
+      <Name>NetFlow.Infrastructure</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

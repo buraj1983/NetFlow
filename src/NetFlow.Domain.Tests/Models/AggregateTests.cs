@@ -1,5 +1,5 @@
 ﻿using System;
-using NetFlow.Common.Messaging;
+using NetFlow.CrossCutting.Messaging;
 using NetFlow.Domain.Models;
 using NUnit.Framework;
 
