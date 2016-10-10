@@ -66,6 +66,10 @@
       <Project>{5795e132-4b0c-4ba9-adfb-32163dd99817}</Project>
       <Name>NetFlow.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Infrastructure.Database.SqlQueries\NetFlow.Infrastructure.Database.SqlQueries.csproj">
+      <Project>{d1305322-6678-4b38-9df6-025a1b68f2da}</Project>
+      <Name>NetFlow.Infrastructure.Database.SqlQueries</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetFlow.Infrastructure.EventSourcing.NEventStore\NetFlow.Infrastructure.EventSourcing.NEventStore.csproj">
       <Project>{2d57069d-3e3e-4d32-ac4c-9e30d22c1e16}</Project>
       <Name>NetFlow.Infrastructure.EventSourcing.NEventStore</Name>
@@ -77,6 +81,10 @@
     <ProjectReference Include="..\NetFlow.Infrastructure\NetFlow.Infrastructure.csproj">
       <Project>{cd6ae308-af8e-4c5b-bcda-4ba4c16a4760}</Project>
       <Name>NetFlow.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Queries\NetFlow.Queries.csproj">
+      <Project>{b105e8d2-764b-40d1-bd8f-044cb284085c}</Project>
+      <Name>NetFlow.Queries</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

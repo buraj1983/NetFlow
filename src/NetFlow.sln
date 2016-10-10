@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Pressentation Layer", "1. Pressentation Layer", "{DDF80877-A911-4E59-A786-252240D22523}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10. Pressentation Layer", "10. Pressentation Layer", "{DDF80877-A911-4E59-A786-252240D22523}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Application Layer", "2. Application Layer", "{1A62904A-CE39-4F8C-B44B-63BDED6C4D64}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20. Application Layer", "20. Application Layer", "{1A62904A-CE39-4F8C-B44B-63BDED6C4D64}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Domain Layer", "3. Domain Layer", "{A3E5D84A-F869-4290-9410-851F2B5A26C9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30. Domain Layer", "30. Domain Layer", "{A3E5D84A-F869-4290-9410-851F2B5A26C9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4. Infrastructure Layer", "4. Infrastructure Layer", "{AB424026-8A1F-4FCF-9777-AB1C7A1649BD}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40. Infrastructure Layer", "40. Infrastructure Layer", "{AB424026-8A1F-4FCF-9777-AB1C7A1649BD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFlow.Domain", "NetFlow.Domain\NetFlow.Domain.csproj", "{5795E132-4B0C-4BA9-ADFB-32163DD99817}"
 EndProject
@@ -24,6 +24,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFlow.Infrastructure.EventSourcing.NEventStore", "NetFlow.Infrastructure.EventSourcing.NEventStore\NetFlow.Infrastructure.EventSourcing.NEventStore.csproj", "{2D57069D-3E3E-4D32-AC4C-9E30D22C1E16}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFlow.Infrastructure.Messaging.InMemory", "NetFlow.Infrastructure.Messaging.InMemory\NetFlow.Infrastructure.Messaging.InMemory.csproj", "{E34473CB-57E4-42EF-B61C-70FA82571F87}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "35. Query Layer", "35. Query Layer", "{3CAD3BE4-2D16-4EFA-A7D5-002079441DB0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFlow.Queries", "NetFlow.Queries\NetFlow.Queries.csproj", "{B105E8D2-764B-40D1-BD8F-044CB284085C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFlow.Infrastructure.Database.SqlQueries", "NetFlow.Infrastructure.Database.SqlQueries\NetFlow.Infrastructure.Database.SqlQueries.csproj", "{D1305322-6678-4B38-9DF6-025A1B68F2DA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +61,14 @@ Global
 		{E34473CB-57E4-42EF-B61C-70FA82571F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E34473CB-57E4-42EF-B61C-70FA82571F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E34473CB-57E4-42EF-B61C-70FA82571F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B105E8D2-764B-40D1-BD8F-044CB284085C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B105E8D2-764B-40D1-BD8F-044CB284085C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B105E8D2-764B-40D1-BD8F-044CB284085C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B105E8D2-764B-40D1-BD8F-044CB284085C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1305322-6678-4B38-9DF6-025A1B68F2DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1305322-6678-4B38-9DF6-025A1B68F2DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1305322-6678-4B38-9DF6-025A1B68F2DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1305322-6678-4B38-9DF6-025A1B68F2DA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -66,5 +80,7 @@ Global
 		{CD6AE308-AF8E-4C5B-BCDA-4BA4C16A4760} = {AB424026-8A1F-4FCF-9777-AB1C7A1649BD}
 		{2D57069D-3E3E-4D32-AC4C-9E30D22C1E16} = {AB424026-8A1F-4FCF-9777-AB1C7A1649BD}
 		{E34473CB-57E4-42EF-B61C-70FA82571F87} = {AB424026-8A1F-4FCF-9777-AB1C7A1649BD}
+		{B105E8D2-764B-40D1-BD8F-044CB284085C} = {3CAD3BE4-2D16-4EFA-A7D5-002079441DB0}
+		{D1305322-6678-4B38-9DF6-025A1B68F2DA} = {AB424026-8A1F-4FCF-9777-AB1C7A1649BD}
 	EndGlobalSection
 EndGlobal

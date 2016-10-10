@@ -55,6 +55,10 @@
       <Project>{cd6ae308-af8e-4c5b-bcda-4ba4c16a4760}</Project>
       <Name>NetFlow.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetFlow.Queries\NetFlow.Queries.csproj">
+      <Project>{B105E8D2-764B-40D1-BD8F-044CB284085C}</Project>
+      <Name>NetFlow.Queries</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -3,6 +3,8 @@ using System.Linq;
 using System.Reflection;
 using Autofac;
 using NetFlow.Api;
+using NetFlow.Infrastructure.Database;
+using NetFlow.Infrastructure.Database.SqlQueries;
 using NetFlow.Infrastructure.EventSourcing;
 using NetFlow.Infrastructure.EventSourcing.NEventStore;
 using NetFlow.Infrastructure.EventSourcing.NEventStore.Sql;
@@ -10,6 +12,10 @@ using NetFlow.Infrastructure.Extensions;
 using NetFlow.Infrastructure.Messaging;
 using NetFlow.Infrastructure.Messaging.Handling;
 using NetFlow.Infrastructure.Messaging.InMemory;
+using NetFlow.Queries;
+using NetFlow.Queries.Dtos.Authentications;
+using NetFlow.Queries.Handlers;
+using NetFlow.Queries.Requests.Authentications;
 
 namespace NetFlow.UI.Consol
 {
@@ -21,8 +27,20 @@ namespace NetFlow.UI.Consol
             {
                 using (var scope = container.BeginLifetimeScope())
                 {
-                    var accounts = scope.Resolve<IAccountService>();
-                    accounts.Register("name", "xxx", null, null, null);
+                    try
+                    {
+                        var accounts = scope.Resolve<IAccountService>();
+                        accounts.Register("name", "xxx", null, null, null);
+
+
+                        var account =
+                            scope.Resolve<IRequestProcessor>()
+                                .Process<FindUserByLogin, User>(new FindUserByLogin {Login = "test"});
+                    }
+                    catch (Exception e)
+                    {
+                        Console.WriteLine(e);
+                    }
                 }
             }
         }
@@ -37,6 +55,8 @@ namespace NetFlow.UI.Consol
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
 
+            #region - CQRS -
+
             //Register Event handlers
             builder.RegisterAssemblyTypes(DomainAssemblies)
                 .Where(t => t.IsHandler(typeof(IEventHandler<>)))
@@ -48,6 +68,24 @@ namespace NetFlow.UI.Consol
                 .Where(t => t.IsHandler(typeof(ICommandHandler<>)))
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
+            
+            // Query DAL
+            builder.RegisterType<QuerySqlContext>()
+                .As<IReadOnlyDbContext>()
+                .As<IDbContext>()
+                .InstancePerDependency();
+
+            // Query Processor
+            builder.Register(
+                (c, p) =>
+                    new RequestProcessor())
+                .As<IRequestProcessor>()
+                .As<IRequestProcessorAsync>()
+                .As<IRequestHandlerRegister>()
+                .As<IRequestHandlerRegisterAsync>()
+                .SingleInstance();
+
+            #endregion
 
             #region - Messaging -
 
