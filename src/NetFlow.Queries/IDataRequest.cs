@@ -1,4 +1,4 @@
-﻿namespace NetFlow.Queries.Requests
+﻿namespace NetFlow.Queries
 {
     public interface IDataRequest<TResult> { }
 }

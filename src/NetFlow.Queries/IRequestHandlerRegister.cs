@@ -1,6 +1,4 @@
-using NetFlow.Queries.Requests;
-
-namespace NetFlow.Queries.Handlers
+namespace NetFlow.Queries
 {
     public interface IRequestHandlerRegister
     {

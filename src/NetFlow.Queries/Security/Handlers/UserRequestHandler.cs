@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Linq;
 using NetFlow.Infrastructure.Database;
-using NetFlow.Queries.Dtos.Security;
-using NetFlow.Queries.Requests.Security;
+using NetFlow.Queries.Security.Dto;
+using NetFlow.Queries.Security.Requests;
 
-namespace NetFlow.Queries.Handlers.Security
+namespace NetFlow.Queries.Security.Handlers
 {
-    public class UserRequestHandler : IRequestHandler<FindUserByLogin, User>
+    public class UserRequestHandler : IRequestHandler<FindUserByLogin, UserDto>
     {
         private readonly IReadOnlyDbContext _readOnlyDb;
 
@@ -16,11 +16,11 @@ namespace NetFlow.Queries.Handlers.Security
             _readOnlyDb = readOnlyDb;
         }
 
-        public User Handle(FindUserByLogin request)
+        public UserDto Handle(FindUserByLogin request)
         {
             if (request == null) throw new ArgumentNullException(nameof(request));
 
-            return _readOnlyDb.Get<User, Guid>().FirstOrDefault(u => u.Login == request.Login);
+            return _readOnlyDb.Get<UserDto, Guid>().FirstOrDefault(u => u.Login == request.Login);
         }
     }
 }

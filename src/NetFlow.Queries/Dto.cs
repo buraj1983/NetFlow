@@ -1,7 +1,7 @@
 ﻿using System;
 using NetFlow.Infrastructure.Database;
 
-namespace NetFlow.Queries.Dtos
+namespace NetFlow.Queries
 {
     public class Dto : IEntity<Guid>
     {

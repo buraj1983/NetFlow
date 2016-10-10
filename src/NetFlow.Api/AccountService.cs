@@ -2,8 +2,8 @@
 using NetFlow.Domain.Security.Commands;
 using NetFlow.Infrastructure.Messaging;
 using NetFlow.Queries;
-using NetFlow.Queries.Dtos.Security;
-using NetFlow.Queries.Requests.Security;
+using NetFlow.Queries.Security.Dto;
+using NetFlow.Queries.Security.Requests;
 
 
 namespace NetFlow.Api
@@ -26,9 +26,9 @@ namespace NetFlow.Api
             _commandBus.Dispatch(new RegisterUser(username, password, firstName, lastName, email));
         }
 
-        public User FindUsersByLogin(string login)
+        public UserDto FindUsersByLogin(string login)
         {
-            return _requests.Process<FindUserByLogin, User>(new FindUserByLogin { Login = login });
+            return _requests.Process<FindUserByLogin, UserDto>(new FindUserByLogin { Login = login });
         }
     }
 }

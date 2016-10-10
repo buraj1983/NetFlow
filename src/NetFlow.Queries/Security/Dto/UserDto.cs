@@ -1,6 +1,6 @@
-﻿namespace NetFlow.Queries.Dtos.Security
+﻿namespace NetFlow.Queries.Security.Dto
 {
-    public class User : Dto
+    public class UserDto : Queries.Dto
     {
         public string Login { get; set; }
         public string FirstName { get; set; }

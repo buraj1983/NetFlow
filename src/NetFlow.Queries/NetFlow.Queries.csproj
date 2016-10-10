@@ -41,19 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dtos\Security\User.cs" />
-    <Compile Include="Dtos\Dto.cs" />
-    <Compile Include="Handlers\Security\UserRequestHandler.cs" />
-    <Compile Include="Handlers\IRequestHandler.cs" />
-    <Compile Include="Handlers\IRequestHandlerAsync.cs" />
-    <Compile Include="Handlers\IRequestHandlerRegister.cs" />
-    <Compile Include="Handlers\IRequestHandlerRegisterAsync.cs" />
+    <Compile Include="Dto.cs" />
+    <Compile Include="IDataRequest.cs" />
+    <Compile Include="IRequestHandler.cs" />
+    <Compile Include="IRequestHandlerAsync.cs" />
+    <Compile Include="IRequestHandlerRegister.cs" />
+    <Compile Include="IRequestHandlerRegisterAsync.cs" />
     <Compile Include="IRequestProcessor.cs" />
     <Compile Include="IRequestProcessorAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestProcessor.cs" />
-    <Compile Include="Requests\Security\FindUserByLogin.cs" />
-    <Compile Include="Requests\IDataRequest.cs" />
+    <Compile Include="Security\Dto\UserDto.cs" />
+    <Compile Include="Security\Handlers\UserRequestHandler.cs" />
+    <Compile Include="Security\Requests\FindUserByLogin.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

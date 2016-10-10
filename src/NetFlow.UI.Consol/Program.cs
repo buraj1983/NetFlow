@@ -13,9 +13,8 @@ using NetFlow.Infrastructure.Messaging;
 using NetFlow.Infrastructure.Messaging.Handling;
 using NetFlow.Infrastructure.Messaging.InMemory;
 using NetFlow.Queries;
-using NetFlow.Queries.Dtos.Security;
-using NetFlow.Queries.Handlers;
-using NetFlow.Queries.Requests.Security;
+using NetFlow.Queries.Security.Dto;
+using NetFlow.Queries.Security.Requests;
 
 namespace NetFlow.UI.Consol
 {
@@ -35,7 +34,7 @@ namespace NetFlow.UI.Consol
 
                         var account =
                             scope.Resolve<IRequestProcessor>()
-                                .Process<FindUserByLogin, User>(new FindUserByLogin {Login = "test"});
+                                .Process<FindUserByLogin, UserDto>(new FindUserByLogin {Login = "test"});
                     }
                     catch (Exception e)
                     {
@@ -69,7 +68,7 @@ namespace NetFlow.UI.Consol
                 .AsImplementedInterfaces()
                 .InstancePerDependency();
             
-            // Query DAL
+            // Query Database
             builder.RegisterType<QuerySqlContext>()
                 .As<IReadOnlyDbContext>()
                 .As<IDbContext>()

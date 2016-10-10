@@ -1,7 +1,6 @@
 using System.Threading.Tasks;
-using NetFlow.Queries.Requests;
 
-namespace NetFlow.Queries.Handlers
+namespace NetFlow.Queries
 {
     public interface IRequestHandlerAsync<in TRequest, TResult> where TRequest : IDataRequest<TResult>
     {
