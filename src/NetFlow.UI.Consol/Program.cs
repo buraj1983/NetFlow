@@ -12,6 +12,8 @@ using NetFlow.Infrastructure.Extensions;
 using NetFlow.Infrastructure.Messaging;
 using NetFlow.Infrastructure.Messaging.Handling;
 using NetFlow.Infrastructure.Messaging.InMemory;
+using NetFlow.Infrastructure.Queries;
+using NetFlow.Infrastructure.Queries.Handling;
 using NetFlow.Queries;
 using NetFlow.Queries.Security.Dto;
 using NetFlow.Queries.Security.Requests;
@@ -77,7 +79,7 @@ namespace NetFlow.UI.Consol
             // Query Processor
             builder.Register(
                 (c, p) =>
-                    new RequestProcessor())
+                    new RequestProcessor(null, null))
                 .As<IRequestProcessor>()
                 .As<IRequestProcessorAsync>()
                 .As<IRequestHandlerRegister>()

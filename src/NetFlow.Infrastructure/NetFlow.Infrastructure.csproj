@@ -69,6 +69,14 @@
     <Compile Include="Processes\IProcessManager.cs" />
     <Compile Include="Processes\IProcessManagerDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Queries\Dto\DtoBase.cs" />
+    <Compile Include="Queries\Handling\IRequestHandler.cs" />
+    <Compile Include="Queries\Handling\IRequestHandlerAsync.cs" />
+    <Compile Include="Queries\Handling\IRequestHandlerRegister.cs" />
+    <Compile Include="Queries\Handling\IRequestHandlerRegisterAsync.cs" />
+    <Compile Include="Queries\IDataRequest.cs" />
+    <Compile Include="Queries\IRequestProcessor.cs" />
+    <Compile Include="Queries\IRequestProcessorAsync.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,6 +1,7 @@
 ﻿using System;
 using NetFlow.Domain.Security.Commands;
 using NetFlow.Infrastructure.Messaging;
+using NetFlow.Infrastructure.Queries;
 using NetFlow.Queries;
 using NetFlow.Queries.Security.Dto;
 using NetFlow.Queries.Security.Requests;

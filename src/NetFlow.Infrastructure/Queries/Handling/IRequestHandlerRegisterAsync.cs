@@ -1,4 +1,4 @@
-namespace NetFlow.Queries
+namespace NetFlow.Infrastructure.Queries.Handling
 {
     public interface IRequestHandlerRegisterAsync
     {

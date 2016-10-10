@@ -1,6 +1,9 @@
-﻿namespace NetFlow.Queries.Security.Dto
+﻿using System;
+using NetFlow.Infrastructure.Queries.Dto;
+
+namespace NetFlow.Queries.Security.Dto
 {
-    public class UserDto : Queries.Dto
+    public class UserDto : DtoBase<Guid>
     {
         public string Login { get; set; }
         public string FirstName { get; set; }

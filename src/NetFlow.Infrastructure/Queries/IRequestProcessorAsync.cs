@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace NetFlow.Queries
+namespace NetFlow.Infrastructure.Queries
 {
     public interface IRequestProcessorAsync
     {

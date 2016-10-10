@@ -41,14 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dto.cs" />
-    <Compile Include="IDataRequest.cs" />
-    <Compile Include="IRequestHandler.cs" />
-    <Compile Include="IRequestHandlerAsync.cs" />
-    <Compile Include="IRequestHandlerRegister.cs" />
-    <Compile Include="IRequestHandlerRegisterAsync.cs" />
-    <Compile Include="IRequestProcessor.cs" />
-    <Compile Include="IRequestProcessorAsync.cs" />
+    <Compile Include="CreateRequestHandler.cs" />
+    <Compile Include="CreateRequestHandlerAsync.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequestProcessor.cs" />
     <Compile Include="Security\Dto\UserDto.cs" />

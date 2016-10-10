@@ -1,6 +1,8 @@
 using System;
 using System.Linq;
 using NetFlow.Infrastructure.Database;
+using NetFlow.Infrastructure.Queries;
+using NetFlow.Infrastructure.Queries.Handling;
 using NetFlow.Queries.Security.Dto;
 using NetFlow.Queries.Security.Requests;
 
