@@ -5,14 +5,14 @@ using NetFlow.Infrastructure.Messaging;
 
 namespace NetFlow.Domain.Security
 {
-    public class Account : EventSourced
+    public class User : EventSourced
     {
-        public Account(Guid id) 
+        public User(Guid id) 
             : base(id)
         {
         }
 
-        public Account(Guid id, IEnumerable<IEvent> commitedEvents) 
+        public User(Guid id, IEnumerable<IEvent> commitedEvents) 
             : base(id)
         {
             ReplayEvents(commitedEvents);

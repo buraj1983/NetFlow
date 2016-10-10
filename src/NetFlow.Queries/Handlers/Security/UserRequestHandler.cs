@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Linq;
 using NetFlow.Infrastructure.Database;
-using NetFlow.Queries.Dtos.Authentications;
-using NetFlow.Queries.Requests.Authentications;
+using NetFlow.Queries.Dtos.Security;
+using NetFlow.Queries.Requests.Security;
 
-namespace NetFlow.Queries.Handlers.Authentications
+namespace NetFlow.Queries.Handlers.Security
 {
     public class UserRequestHandler : IRequestHandler<FindUserByLogin, User>
     {

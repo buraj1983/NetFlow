@@ -13,9 +13,9 @@ using NetFlow.Infrastructure.Messaging;
 using NetFlow.Infrastructure.Messaging.Handling;
 using NetFlow.Infrastructure.Messaging.InMemory;
 using NetFlow.Queries;
-using NetFlow.Queries.Dtos.Authentications;
+using NetFlow.Queries.Dtos.Security;
 using NetFlow.Queries.Handlers;
-using NetFlow.Queries.Requests.Authentications;
+using NetFlow.Queries.Requests.Security;
 
 namespace NetFlow.UI.Consol
 {

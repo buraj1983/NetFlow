@@ -6,22 +6,22 @@ using NetFlow.Infrastructure.Messaging.Handling;
 
 namespace NetFlow.Domain.Security.Handlers
 {
-    public class AccountRegistration : ICommandHandler<RegisterAccount>, IEventHandler<AccountRegistered>
+    public class UserRegistration : ICommandHandler<RegisterUser>, IEventHandler<UserRegistered>
     {
-        private readonly IEventSourcedRepository<Account> _accountRepository;
+        private readonly IEventSourcedRepository<User> _accountRepository;
 
-        public AccountRegistration(IEventSourcedRepository<Account> accountRepository)
+        public UserRegistration(IEventSourcedRepository<User> accountRepository)
         {
             if (accountRepository == null) throw new ArgumentNullException(nameof(accountRepository));
             _accountRepository = accountRepository;
         }
 
-        public void Handle(RegisterAccount command)
+        public void Handle(RegisterUser command)
         {
             var account = _accountRepository.Find(command.Id);
         }
 
-        public void Handle(AccountRegistered @event)
+        public void Handle(UserRegistered @event)
         {
             
         }

@@ -2,8 +2,8 @@
 using NetFlow.Domain.Security.Commands;
 using NetFlow.Infrastructure.Messaging;
 using NetFlow.Queries;
-using NetFlow.Queries.Dtos.Authentications;
-using NetFlow.Queries.Requests.Authentications;
+using NetFlow.Queries.Dtos.Security;
+using NetFlow.Queries.Requests.Security;
 
 
 namespace NetFlow.Api
@@ -23,7 +23,7 @@ namespace NetFlow.Api
 
         public void Register(string username, string password, string firstName, string lastName, string email)
         {
-            _commandBus.Dispatch(new RegisterAccount(username, password, firstName, lastName, email));
+            _commandBus.Dispatch(new RegisterUser(username, password, firstName, lastName, email));
         }
 
         public User FindUsersByLogin(string login)
