@@ -1,4 +1,6 @@
 using System;
+using System.CodeDom;
+using System.Collections.Generic;
 using System.Linq;
 using NetFlow.Infrastructure.Messaging.Handling;
 
@@ -6,33 +8,22 @@ namespace NetFlow.Infrastructure.Extensions
 {
     public static class TypeExtension
     {
-        public static bool IsAssignableToGenericType(this Type target, Type genericTypeDefinition)
+        public static bool IsClosedType(this Type target, Type openTypeDefinition)
         {
-            if (target.IsGenericType(genericTypeDefinition) ||
-                target.GetInterfaces().Any(i => IsGenericType(i, genericTypeDefinition))) return true;
-            
-            return target.BaseType != null && IsAssignableToGenericType(target.BaseType, genericTypeDefinition);
+            ThrowIfNotOpenType(openTypeDefinition);
+            return target.IsConstructedGenericType && target.GetGenericTypeDefinition() == openTypeDefinition;
         }
 
-        public static bool IsGenericType(this Type target, Type genericTypeDefinition)
-        {
-            if (genericTypeDefinition == null)
-                throw new ArgumentNullException(nameof(genericTypeDefinition));
-            if (!genericTypeDefinition.IsGenericTypeDefinition)
-                throw new ArgumentException("Argument is not generic type definition.");
-
-            return target.IsGenericType && target.GetGenericTypeDefinition() == genericTypeDefinition;
-        }
-
-        public static bool IsHandler(this Type target, Type handlerGenericType)
-        {
-            if (handlerGenericType == null) throw new ArgumentNullException(nameof(handlerGenericType));
-
-            return target.IsClass && target.IsAssignableToGenericType(handlerGenericType);
-        }
+        public static IEnumerable<Type> GetClosedTypeInterfaces(this Type target, Type openTypeDefinition)
+            => target.GetInterfaces().Where(t => t.IsClosedType(openTypeDefinition));
         
-        public static IHandlerInfo CreateHandlerInfo(this Type target, Type handlerGenericType)
-            => new HandlerInfo(target, handlerGenericType);
-        
+        private static void ThrowIfNotOpenType(Type target)
+        {
+            if (target == null)
+                throw new ArgumentNullException(nameof(target));
+
+            if (!target.IsGenericTypeDefinition)
+                throw new ArgumentException("Type is not generic type definition.", nameof(target));
+        }
     }
 }

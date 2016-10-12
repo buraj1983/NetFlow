@@ -1,5 +1,5 @@
 ﻿using System;
-using NetFlow.Infrastructure.Queries.Dto;
+using NetFlow.Infrastructure.Database;
 
 namespace NetFlow.Queries.Security.Dto
 {

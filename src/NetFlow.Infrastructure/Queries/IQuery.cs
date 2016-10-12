@@ -1,4 +1,4 @@
 ﻿namespace NetFlow.Infrastructure.Queries
 {
-    public interface IDataRequest<TResult> { }
+    public interface IQuery<TResult> { }
 }

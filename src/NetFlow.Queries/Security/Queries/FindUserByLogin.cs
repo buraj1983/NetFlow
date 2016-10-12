@@ -1,9 +1,9 @@
 using NetFlow.Infrastructure.Queries;
 using NetFlow.Queries.Security.Dto;
 
-namespace NetFlow.Queries.Security.Requests
+namespace NetFlow.Queries.Security.Queries
 {
-    public class FindUserByLogin : IDataRequest<UserDto>
+    public class FindUserByLogin : IQuery<UserDto>
     {
         public string Login { get; set; }
     }

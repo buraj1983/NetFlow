@@ -4,7 +4,7 @@ using NetFlow.Infrastructure.Messaging;
 using NetFlow.Infrastructure.Queries;
 using NetFlow.Queries;
 using NetFlow.Queries.Security.Dto;
-using NetFlow.Queries.Security.Requests;
+using NetFlow.Queries.Security.Queries;
 
 
 namespace NetFlow.Api
@@ -12,14 +12,14 @@ namespace NetFlow.Api
     public class AccountService : IAccountService
     {
         private readonly ICommandDispatcher _commandBus;
-        private readonly IRequestProcessor _requests;
+        private readonly IQueryProcessor _queries;
 
-        public AccountService(ICommandDispatcher commandBus, IRequestProcessor requests)
+        public AccountService(ICommandDispatcher commandBus, IQueryProcessor queries)
         {
             if (commandBus == null) throw new ArgumentNullException(nameof(commandBus));
             
             _commandBus = commandBus;
-            _requests = requests;
+            _queries = queries;
         }
 
         public void Register(string username, string password, string firstName, string lastName, string email)
@@ -29,7 +29,7 @@ namespace NetFlow.Api
 
         public UserDto FindUsersByLogin(string login)
         {
-            return _requests.Process<FindUserByLogin, UserDto>(new FindUserByLogin { Login = login });
+            return _queries.Process<FindUserByLogin, UserDto>(new FindUserByLogin { Login = login });
         }
     }
 }

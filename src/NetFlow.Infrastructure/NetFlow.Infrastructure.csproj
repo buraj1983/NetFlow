@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Database\DtoBase.cs" />
     <Compile Include="Database\IDbContext.cs" />
     <Compile Include="Database\IEntity.cs" />
     <Compile Include="Database\IReadOnlyDbContext.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Messaging\Handling\IEventHandler.cs" />
     <Compile Include="Messaging\Handling\IEventHandlerRegister.cs" />
     <Compile Include="Messaging\Handling\IHandlerInfo.cs" />
+    <Compile Include="Messaging\IBus.cs" />
     <Compile Include="Messaging\ICommand.cs" />
     <Compile Include="Messaging\ICommandDispatcher.cs" />
     <Compile Include="Messaging\IEvent.cs" />
@@ -69,14 +71,9 @@
     <Compile Include="Processes\IProcessManager.cs" />
     <Compile Include="Processes\IProcessManagerDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Queries\Dto\DtoBase.cs" />
-    <Compile Include="Queries\Handling\IRequestHandler.cs" />
-    <Compile Include="Queries\Handling\IRequestHandlerAsync.cs" />
-    <Compile Include="Queries\Handling\IRequestHandlerRegister.cs" />
-    <Compile Include="Queries\Handling\IRequestHandlerRegisterAsync.cs" />
-    <Compile Include="Queries\IDataRequest.cs" />
-    <Compile Include="Queries\IRequestProcessor.cs" />
-    <Compile Include="Queries\IRequestProcessorAsync.cs" />
+    <Compile Include="Queries\IQuery.cs" />
+    <Compile Include="Queries\IQueryHandler.cs" />
+    <Compile Include="Queries\IQueryProcessor.cs" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

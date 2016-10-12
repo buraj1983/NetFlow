@@ -45,6 +45,7 @@
     <Compile Include="CommandHandlerFactory.cs" />
     <Compile Include="EventDispatcher.cs" />
     <Compile Include="EventHandlerFactory.cs" />
+    <Compile Include="InMemoryBus.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
